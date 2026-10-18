@@ -1,0 +1,93 @@
+# MultiThreaded Java Web Server
+
+A Java-based backend project that demonstrates multithreaded socket communication and HTTP request handling. This project is designed to showcase core server-side concepts such as concurrency, client-server communication, and basic HTTP response generation.
+
+## Project Overview
+
+This application creates a multithreaded server that listens for incoming client connections on a local port. Each client request is handled in a separate thread, allowing multiple clients to be processed concurrently rather than waiting in a queue.
+
+The server serves static HTML pages and responds to basic HTTP GET requests, making it a practical example of backend networking and request handling.
+
+## Features
+
+- Multithreaded Java server using `ServerSocket` and `Socket`
+- Concurrent client handling with Java `Thread`
+- Basic HTTP request parsing
+- Static HTML page serving from a local `web` directory
+- Support for routing to `/` and `/about`
+- Clean project structure suitable for portfolio presentation
+
+## Technologies Used
+
+- Java 17
+- Socket Programming
+- Multithreading
+- HTTP Basics
+- Maven/Makefile-based Java project setup
+
+## Project Structure
+
+```text
+.
+├── .gitignore
+├── .readme
+├── Makefile
+├── README.md
+├── pom.xml
+├── src/
+│   └── main/java/com/multithreaded/socket/
+│       ├── Client.java
+│       └── Server.java
+└── web/
+    ├── index.html
+    └── about.html
+```
+
+## How to Run
+
+1. Compile the project:
+
+```bash
+make compile
+```
+
+2. Start the server:
+
+```bash
+make server
+```
+
+3. Open in a browser:
+
+```text
+http://localhost:8080/
+http://localhost:8080/about
+```
+
+4. Simulate multiple clients from different terminals:
+
+```bash
+make client CLIENT_NAME=ClientA CLIENT_MESSAGE="Hello from Client A" PAGE=/
+make client CLIENT_NAME=ClientB CLIENT_MESSAGE="Hello from Client B" PAGE=/about
+```
+
+## Why This Project Is Useful
+
+This project demonstrates the core backend concepts behind real-world servers:
+
+- multiple clients can connect at the same time
+- each request may be processed independently
+- server logic must handle concurrency safely and efficiently
+- HTTP responses are generated from backend code
+
+## Skills Demonstrated
+
+- Java backend development
+- Networking and sockets
+- Multithreading and concurrency
+- HTTP fundamentals
+- Simple web server design
+
+## Resume-Friendly Summary
+
+Developed a multithreaded Java web server that accepts multiple client connections, serves static HTML pages, and handles HTTP requests concurrently using Java sockets and threads.
